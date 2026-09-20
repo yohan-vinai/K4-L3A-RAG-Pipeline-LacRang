@@ -30,6 +30,7 @@ LLM_MODEL = os.getenv("LLM_MODEL", "")
 
 SYSTEM_PROMPT = """Trả lời chỉ từ context được cung cấp.
 Mỗi khẳng định phải có citation. Nếu thiếu evidence, hãy từ chối xác minh."""
+SAFE_REFUSAL = "Tôi không thể xác minh thông tin này từ nguồn tài liệu hiện có."
 
 STYLE_INSTRUCTIONS = {
     "concise": "Trả lời ngắn gọn, đi thẳng vào câu hỏi.",
@@ -180,7 +181,7 @@ def _generation_result(answer: str, chunks: list[dict]) -> dict:
 
 def _safe_refusal() -> dict:
     return {
-        "answer": "Tôi không thể xác minh thông tin này từ nguồn tài liệu hiện có.",
+        "answer": SAFE_REFUSAL,
         "sources": [],
         "retrieval_source": "none",
     }
