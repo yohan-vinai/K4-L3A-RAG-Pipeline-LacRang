@@ -1,0 +1,117 @@
+[
+  {
+    "question": "Thí sinh đăng ký xét tuyển đại học năm 2026 bằng cách nào?",
+    "expected_answer": "Thí sinh phải đăng ký xét tuyển trực tuyến trên Hệ thống hỗ trợ tuyển sinh chung của Bộ GDĐT hoặc Cổng dịch vụ công quốc gia; toàn bộ nguyện vọng phải được đăng ký trên Hệ thống.",
+    "expected_context": "Tất cả thí sinh, bao gồm cả thí sinh xét tuyển thẳng, bắt buộc phải đăng kí xét tuyển trực tuyến trên Hệ thống hỗ trợ tuyển sinh chung của Bộ GDĐT hoặc Cổng dịch vụ công quốc gia. Toàn bộ nguyện vọng xét tuyển của thí sinh đều phải được đăng kí trên Hệ thống để xử lí chung."
+  },
+  {
+    "question": "Năm 2026 được đăng ký tối đa bao nhiêu nguyện vọng?",
+    "expected_answer": "Thí sinh được đăng ký tối đa 15 nguyện vọng và sắp xếp theo thứ tự ưu tiên từ cao xuống thấp.",
+    "expected_context": "Thí sinh được đăng kí tối đa 15 nguyện vọng và sắp xếp theo thứ tự ưu tiên từ cao xuống thấp."
+  },
+  {
+    "question": "Ngành đào tạo giáo viên xét các nguyện vọng có thứ tự nào?",
+    "expected_answer": "Các chương trình đào tạo giáo viên chỉ xét các nguyện vọng từ thứ tự 01 đến 05.",
+    "expected_context": "Đối với các thí sinh đăng kí xét tuyển vào các ngành đào tạo giáo viên, các cơ sở đào tạo chỉ xét tuyển các nguyện vọng từ 01 đến 05."
+  },
+  {
+    "question": "Thời hạn đăng ký hoặc điều chỉnh nguyện vọng xét tuyển năm 2026 là khi nào?",
+    "expected_answer": "Thí sinh đăng ký, điều chỉnh nguyện vọng từ ngày 02/7 đến 17 giờ ngày 14/7/2026.",
+    "expected_context": "Từ 2/7 đến 17 giờ ngày 14/7/2026: Thí sinh đăng ký, điều chỉnh nguyện vọng xét tuyển."
+  },
+  {
+    "question": "Khi nào phải hoàn thành nộp lệ phí xét tuyển trực tuyến?",
+    "expected_answer": "Thí sinh nộp lệ phí trực tuyến từ ngày 15/7 đến 17 giờ ngày 21/7/2026.",
+    "expected_context": "Từ ngày 15/7 đến 17 giờ ngày 21/7/2026: Thí sinh nộp lệ phí xét tuyển trực tuyến."
+  },
+  {
+    "question": "Hạn cuối xác nhận nhập học trực tuyến đợt 1 là lúc nào?",
+    "expected_answer": "Thí sinh phải hoàn thành xác nhận nhập học trực tuyến đợt 1 trước 17 giờ ngày 21/8/2026.",
+    "expected_context": "17 giờ ngày 21/8/2026: Thí sinh hoàn thành việc xác nhận nhập học trực tuyến đợt 1."
+  },
+  {
+    "question": "Ai phải nộp lệ phí xét tuyển trực tuyến?",
+    "expected_answer": "Chỉ thí sinh đăng ký nguyện vọng theo phương thức xét điểm thi tốt nghiệp THPT phải nộp lệ phí.",
+    "expected_context": "Chỉ các thí sinh có đăng ký nguyện vọng xét tuyển theo phương thức xét theo điểm thi tốt nghiệp THPT mới phải thực hiện nghĩa vụ nộp lệ phí."
+  },
+  {
+    "question": "Có thể nộp lệ phí xét tuyển qua kênh nào?",
+    "expected_answer": "Thí sinh chỉ nộp lệ phí trên Hệ thống XT; hệ thống cho phép thanh toán qua mã QR.",
+    "expected_context": "Hệ thống đăng ký xét tuyển ĐH, CĐ năm 2026 cho phép thí sinh thanh toán qua mã QR để thực hiện đóng lệ phí xét tuyển. Thí sinh chỉ thực hiện việc nộp lệ phí trên Hệ thống XT, không thực hiện trên bất kỳ kênh thanh toán nào khác."
+  },
+  {
+    "question": "Thí sinh KV1 được cộng bao nhiêu điểm ưu tiên?",
+    "expected_answer": "Mức điểm ưu tiên áp dụng cho khu vực 1 (KV1) là 0,75 điểm.",
+    "expected_context": "Mức điểm ưu tiên áp dụng cho khu vực 1 (KV1) là 0,75 điểm, khu vực 2 nông thôn (KV2-NT) là 0,50 điểm, khu vực 2 (KV2) là 0,25 điểm; khu vực 3 (KV3) không được tính điểm ưu tiên."
+  },
+  {
+    "question": "Nhóm đối tượng ưu tiên UT1 và UT2 được cộng bao nhiêu điểm?",
+    "expected_answer": "Nhóm đối tượng UT1 được cộng 2,00 điểm, còn nhóm đối tượng ưu tiên 2 được cộng 1,00 điểm.",
+    "expected_context": "Mức điểm ưu tiên áp dụng cho nhóm đối tượng UT1 (gồm các đối tượng 1 đến 3) là 2,00 điểm và cho nhóm đối tượng ưu tiên 2 (gồm các đối tượng 4 đến 6) là 1,00 điểm."
+  },
+  {
+    "question": "Nếu thuộc nhiều diện ưu tiên đối tượng chính sách thì được cộng như thế nào?",
+    "expected_answer": "Thí sinh chỉ được hưởng một mức điểm ưu tiên cao nhất.",
+    "expected_context": "Thí sinh thuộc nhiều diện đối tượng chính sách quy định tại điểm a và điểm b khoản này chỉ được hưởng một mức điểm ưu tiên cao nhất."
+  },
+  {
+    "question": "Điểm ưu tiên thay đổi thế nào khi tổng điểm từ 22,50 trở lên?",
+    "expected_answer": "Điểm ưu tiên được làm tròn đến hàng phần trăm và tính theo công thức [(30 - tổng điểm đạt được)/7,50] nhân mức điểm ưu tiên.",
+    "expected_context": "Điểm ưu tiên đối với thí sinh đạt tổng điểm từ 22,50 trở lên được làm tròn đến hàng phần trăm và xác định theo công thức: Điểm ưu tiên = [(30 - Tổng điểm đạt được)/7,50] x Mức điểm ưu tiên."
+  },
+  {
+    "question": "Điều kiện điểm đầu vào tối thiểu theo quy chế tuyển sinh 2026 là gì?",
+    "expected_answer": "Nguồn tuyển là thí sinh có tổng điểm ba môn thi tốt nghiệp THPT theo tổ hợp xét tuyển, hoặc Toán, Ngữ văn và một môn khác, đạt tối thiểu 15 điểm theo thang 30; không áp dụng với thí sinh đặc cách hoặc miễn thi tốt nghiệp.",
+    "expected_context": "Nguồn tuyển là thí sinh có tổng điểm ba môn thi tốt nghiệp THPT tương ứng tổ hợp xét tuyển (hoặc điểm thi của môn Toán và Ngữ văn và một môn khác) đạt tối thiểu 15 theo thang điểm 30 (không áp dụng với thí sinh đặc cách hoặc được miễn thi tốt nghiệp)."
+  },
+  {
+    "question": "Điểm cộng tối đa trong tuyển sinh 2026 là bao nhiêu?",
+    "expected_answer": "Tổng điểm cộng tối đa là 3 điểm theo thang điểm 30; điểm khuyến khích cho chứng chỉ ngoại ngữ hoặc chứng chỉ quốc tế tối đa 1,5 điểm.",
+    "expected_context": "Điểm cộng (bao gồm điểm thưởng, điểm xét thưởng, điểm khuyến khích) tối đa là 3 điểm theo thang điểm 30. Điểm khuyến khích đối với thí sinh có chứng chỉ ngoại ngữ hoặc có chứng chỉ quốc tế từ 0 - 1,5."
+  },
+  {
+    "question": "Điểm chuẩn ngành Công nghệ thông tin của Đại học Bách khoa Hà Nội năm 2026 là bao nhiêu?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn tài liệu tuyển sinh hiện có vì corpus không chứa điểm chuẩn ngành Công nghệ thông tin của Đại học Bách khoa Hà Nội.",
+    "expected_context": "Corpus được giới hạn ở quy chế, chính sách ưu tiên, số lượng tuyển sinh, quy trình đăng ký, mốc thời gian và thanh toán lệ phí tuyển sinh năm 2026; không có bảng điểm chuẩn theo ngành của Đại học Bách khoa Hà Nội."
+  },
+  {
+    "question": "Học phí ngành Y khoa của Đại học Quốc gia Hà Nội năm 2026 là bao nhiêu?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn tài liệu tuyển sinh hiện có vì corpus không có thông tin học phí ngành Y khoa của Đại học Quốc gia Hà Nội.",
+    "expected_context": "Corpus phản ánh nguồn về quy chế, điều kiện dự tuyển, chính sách ưu tiên, số lượng tuyển sinh, quy trình đăng ký, mốc thời gian và thanh toán lệ phí; không có thông tin học phí theo ngành."
+  },
+  {
+    "question": "Thời tiết Hà Nội hôm nay thế nào?",
+    "expected_answer": "Tôi không thể xác minh thông tin này từ nguồn tài liệu tuyển sinh hiện có vì đây là câu hỏi ngoài phạm vi tuyển sinh đại học 2026.",
+    "expected_context": "Corpus hỗ trợ hỏi đáp về quy chế, điều kiện dự tuyển, chính sách ưu tiên, số lượng tuyển sinh, quy trình đăng ký, các mốc thời gian và thanh toán lệ phí trong mùa tuyển sinh đại học năm 2026."
+  },
+  {
+    "question": "Một cơ sở đào tạo được sử dụng tối đa bao nhiêu phương thức tuyển sinh?",
+    "expected_answer": "Cơ sở đào tạo được sử dụng tối đa 5 phương thức tuyển sinh, không bao gồm xét tuyển thẳng, xét tuyển đối tượng cử tuyển và xét tuyển đối tượng dự bị đại học.",
+    "expected_context": "Cơ sở đào tạo sử dụng tối đa 05 phương thức tuyển sinh không bao gồm xét tuyển thẳng, xét tuyển đối tượng cử tuyển, xét tuyển đối tượng dự bị đại học."
+  },
+  {
+    "question": "Chứng chỉ ngoại ngữ được dùng trong xét tuyển đại học như thế nào?",
+    "expected_answer": "Chứng chỉ ngoại ngữ chỉ được dùng để quy đổi điểm môn ngoại ngữ trong tổ hợp xét tuyển hoặc dùng cho điểm khuyến khích. Bảng quy đổi tiếng Anh phải có tối thiểu 5 mức điểm chênh lệch.",
+    "expected_context": "Chứng chỉ ngoại ngữ chỉ được dùng cho quy đổi điểm môn ngoại ngữ trong tổ hợp xét tuyển hoặc sử dụng cho điểm khuyến khích. Bảng quy đổi kết quả chứng chỉ ngoại ngữ Tiếng Anh và điểm xét môn ngoại ngữ xây dựng phải có tối thiểu 05 mức điểm chênh lệch."
+  },
+  {
+    "question": "Trường hợp nào thí sinh được bảo lưu kết quả trúng tuyển và tối đa bao lâu?",
+    "expected_answer": "Thí sinh đã có giấy báo trúng tuyển có thể bảo lưu khi đi nghĩa vụ quân sự, công an nhân dân hoặc thanh niên xung phong tập trung; hoặc khi bị bệnh nặng hay tai nạn nghiêm trọng không thể nhập học đúng hạn. Thời gian bảo lưu do cơ sở đào tạo quy định nhưng không quá 36 tháng.",
+    "expected_context": "Thí sinh đã có giấy báo trúng tuyển được bảo lưu kết quả trúng tuyển khi đi nghĩa vụ quân sự, công an nhân dân hoặc đi thanh niên xung phong tập trung; hoặc bị bệnh nặng, tai nạn nghiêm trọng không thể nhập học đúng hạn. Thời gian tối đa được bảo lưu kết quả do cơ sở đào tạo quy định, nhưng không quá 36 tháng."
+  },
+  {
+    "question": "Cơ sở đào tạo phải công bố những thông tin học phí nào?",
+    "expected_answer": "Cơ sở đào tạo phải công bố đầy đủ chi phí đào tạo, mức học phí và các khoản thu dịch vụ cho cả khóa học và từng năm học, cùng chính sách học bổng, miễn giảm học phí, hỗ trợ tài chính và chỗ ở ký túc xá.",
+    "expected_context": "Thông tin tuyển sinh phải có thông tin đầy đủ về chi phí đào tạo, mức thu học phí, mức thu dịch vụ tuyển sinh và khoản thu dịch vụ khác cho lộ trình cả khóa học, từng năm học; chính sách học bổng, miễn giảm học phí, hỗ trợ tài chính, chỗ ở ký túc xá và các chính sách ưu đãi, hỗ trợ khác dành cho người học."
+  },
+  {
+    "question": "Theo Quy chế tuyển sinh của ĐHQGHN, chứng chỉ ngoại ngữ dùng trong tuyển sinh phải còn giá trị trong bao lâu?",
+    "expected_answer": "Chứng chỉ ngoại ngữ phải còn thời hạn sử dụng đến thời điểm kết thúc đăng ký hoặc nộp hồ sơ xét tuyển; chứng chỉ hoặc chứng nhận có giá trị 2 năm kể từ ngày thi.",
+    "expected_context": "Chứng chỉ ngoại ngữ sử dụng trong tuyển sinh phải còn thời hạn sử dụng tính đến thời điểm kết thúc đăng ký/nộp hồ sơ xét tuyển; chứng chỉ, chứng nhận có giá trị 02 năm kể từ ngày thi."
+  },
+  {
+    "question": "Số lượng tuyển sinh được xác định theo nguyên tắc nào?",
+    "expected_answer": "Số lượng tuyển sinh được xác định cho từng năm, theo từng trình độ, hình thức và phương thức tổ chức đào tạo tại từng địa điểm; thông thường theo nhóm ngành, nhưng ngành đào tạo giáo viên, lĩnh vực sức khỏe, trình độ tiến sĩ và ngành mở mới được xác định theo ngành.",
+    "expected_context": "Số lượng tuyển sinh được xác định và thực hiện cho từng năm, theo từng trình độ, hình thức và phương thức tổ chức đào tạo tại từng địa điểm xác định số lượng tuyển sinh và được xác định theo nhóm ngành, trừ các ngành thuộc nhóm ngành đào tạo giáo viên, lĩnh vực sức khỏe, ngành đào tạo trình độ tiến sĩ và chương trình đào tạo của ngành mở mới trong năm tuyển sinh."
+  }
+]
