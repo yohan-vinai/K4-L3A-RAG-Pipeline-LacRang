@@ -10,18 +10,24 @@ from pathlib import Path
 from typing import Callable
 from urllib.parse import urlparse
 
-from .support import load_corpus_catalog, load_evaluation_status, run_generation
+from ..pipeline_config import PipelineConfig, config_options
+from .support import (
+    load_corpus_catalog,
+    load_evaluation_status,
+    load_golden_questions,
+    run_generation,
+)
 
 
-Generator = Callable[[str, int], dict]
+Generator = Callable[[str, int, PipelineConfig], dict]
 INDEX_FILE = Path(__file__).resolve().parent / "static" / "index.html"
 
 
-def _default_generator(query: str, top_k: int) -> dict:
-    """Import Task 10 lazily so the UI can start while the pipeline is incomplete."""
-    from ..task10_generation import generate_with_citation
+def _default_generator(query: str, top_k: int, config: PipelineConfig) -> dict:
+    """Import Task 10 lazily so startup does not initialize model clients."""
+    from ..task10_generation import generate_with_config
 
-    return generate_with_citation(query, top_k)
+    return generate_with_config(query, config)
 
 
 def _catalog_payload() -> dict:
@@ -30,6 +36,7 @@ def _catalog_payload() -> dict:
         "sources": sources,
         "summary": {
             "total": len(sources),
+            "chunks": sum(item["chunk_count"] for item in sources),
             "legal": sum(item["doc_type"] == "legal" for item in sources),
             "news": sum(item["doc_type"] == "news" for item in sources),
         },
@@ -61,6 +68,17 @@ def make_handler(generator: Generator = _default_generator) -> type[BaseHTTPRequ
             if path == "/api/evaluation":
                 self._send_json(load_evaluation_status())
                 return
+            if path == "/api/golden-questions":
+                self._send_json({"questions": load_golden_questions()})
+                return
+            if path == "/api/config":
+                self._send_json(
+                    {
+                        "defaults": PipelineConfig.defaults().public_dict(),
+                        "options": config_options(),
+                    }
+                )
+                return
             self._send_json({"error": "not_found"}, status=HTTPStatus.NOT_FOUND)
 
         def do_POST(self) -> None:  # noqa: N802 - stdlib handler API
@@ -77,7 +95,6 @@ def make_handler(generator: Generator = _default_generator) -> type[BaseHTTPRequ
                 return
 
             query = payload.get("query")
-            top_k = payload.get("top_k", 5)
             if not isinstance(query, str) or not query.strip():
                 self._send_json(
                     {"error": "query_required"}, status=HTTPStatus.BAD_REQUEST
@@ -88,14 +105,24 @@ def make_handler(generator: Generator = _default_generator) -> type[BaseHTTPRequ
                     {"error": "query_too_long"}, status=HTTPStatus.BAD_REQUEST
                 )
                 return
-            if not isinstance(top_k, int) or isinstance(top_k, bool) or not 3 <= top_k <= 10:
+            raw_config = payload.get("config")
+            if raw_config is None:
+                raw_config = {"top_k": payload.get("top_k", 5)}
+            try:
+                config = PipelineConfig.from_payload(raw_config)
+            except ValueError as error:
                 self._send_json(
-                    {"error": "top_k_must_be_between_3_and_10"},
+                    {"error": "invalid_config", "detail": str(error)},
                     status=HTTPStatus.BAD_REQUEST,
                 )
                 return
 
-            result = run_generation(query.strip(), top_k, generator)
+            result = run_generation(
+                query.strip(),
+                config.top_k,
+                lambda clean_query, top_k: generator(clean_query, top_k, config),
+            )
+            result["config"] = config.public_dict()
             self._send_json(result)
 
         def _read_json(self) -> dict:

@@ -1,0 +1,507 @@
+[
+  {
+    "id": "GQ-001",
+    "question": "Từ năm 2026, thí sinh thông thường phải đạt tối thiểu bao nhiêu điểm ba môn thi tốt nghiệp THPT để thuộc nguồn xét tuyển đại học?",
+    "expected_answer": "Tối thiểu 15,00 điểm theo thang 30. Điều kiện này không áp dụng cho thí sinh được đặc cách hoặc miễn thi tốt nghiệp và một số đối tượng xét tuyển thẳng được quy chế loại trừ.",
+    "expected_context": "Quy chế chính thức tại khoản 3 Điều 6 chốt ngưỡng nguồn tuyển là 15,00 điểm; đoạn 16 điểm trong cùng bài tổng hợp là nội dung dự thảo cũ.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-6-khoản-3",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 6 khoản 3",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      },
+      {
+        "source_id": "NEWS_TIMELINE_2026",
+        "path": "data/standardized/news/02_tuyen_sinh_2026_cac_moc_thoi_gian_quan_trong_thi_sinh_can_nho.md",
+        "title": "Các mốc thời gian quan trọng tuyển sinh 2026",
+        "locator": "Mục Nhiều điểm mới trong Quy chế tuyển sinh đại học năm 2026",
+        "url": "https://xaydungchinhsach.chinhphu.vn/tuyen-sinh-2026-cac-moc-thoi-gian-quan-trong-thi-sinh-can-nho-119260206155449664.htm"
+      }
+    ],
+    "difficulty": "hard",
+    "case_type": "draft_vs_final",
+    "note": "Không lấy con số 16 ở phần dự thảo; ưu tiên văn bản chính thức và phần mô tả quy chế đã ban hành."
+  },
+  {
+    "id": "GQ-002",
+    "question": "Thí sinh được đăng ký tối đa bao nhiêu nguyện vọng trong đợt 1 tuyển sinh đại học 2026?",
+    "expected_answer": "Tối đa 15 nguyện vọng, sắp xếp theo thứ tự ưu tiên từ cao xuống thấp; nếu đủ điều kiện ở nhiều nguyện vọng thì chỉ được công nhận trúng tuyển ở nguyện vọng cao nhất.",
+    "expected_context": "Điều 14 khoản 3 quy định tối đa 15 nguyện vọng và hệ thống chỉ công nhận nguyện vọng đủ điều kiện có thứ tự cao nhất.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-14-khoản-3",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 14 khoản 3",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "single_source",
+    "note": "Câu hỏi kiểm tra giới hạn và ý nghĩa thứ tự nguyện vọng."
+  },
+  {
+    "id": "GQ-003",
+    "question": "Các chương trình đào tạo giáo viên xét những nguyện vọng có thứ tự nào?",
+    "expected_answer": "Chỉ xét các nguyện vọng có thứ tự từ 01 đến 05.",
+    "expected_context": "Quy chế giới hạn chương trình đào tạo giáo viên ở năm nguyện vọng ưu tiên đầu tiên.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-14-khoản-3",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 14 khoản 3",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "single_source",
+    "note": "Không nhầm với tổng giới hạn 15 nguyện vọng."
+  },
+  {
+    "id": "GQ-004",
+    "question": "Thí sinh đã đủ điều kiện trúng tuyển thẳng có còn phải đăng ký nguyện vọng và xác nhận nhập học trên hệ thống không?",
+    "expected_answer": "Có. Thí sinh trúng tuyển thẳng vẫn phải đăng ký nguyện vọng trên Hệ thống theo kế hoạch chung và xác nhận nhập học theo lịch chung.",
+    "expected_context": "Điều 13 yêu cầu người trúng tuyển thẳng đưa nguyện vọng lên Hệ thống và xác nhận nhập học; hướng dẫn 2304 cũng áp dụng đăng ký trực tuyến cho mọi thí sinh.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-13",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 13 khoản 3 và 4",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      },
+      {
+        "source_id": "NEWS_GUIDANCE_2304_2026",
+        "path": "data/standardized/news/01_toan_van_cong_van_2304_bgddt_gddh_huong_dan_tuyen_sinh_dai_hoc_cao_dang_2026.md",
+        "title": "Hướng dẫn tuyển sinh đại học, cao đẳng năm 2026",
+        "locator": "Mục Đăng kí trên Hệ thống",
+        "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-cong-van-2304-bgddt-gddh-huong-dan-tuyen-sinh-dai-hoc-cao-dang-2026-119260505052505936.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "multi_source_corroboration",
+    "note": "Dễ nhầm đủ điều kiện trúng tuyển thẳng với hoàn tất thủ tục nhập học."
+  },
+  {
+    "id": "GQ-005",
+    "question": "Thời gian đăng ký, điều chỉnh và bổ sung nguyện vọng xét tuyển năm 2026 là khi nào?",
+    "expected_answer": "Từ ngày 02/07/2026 đến 17 giờ ngày 14/07/2026; trong khoảng này thí sinh được thay đổi nhiều lần.",
+    "expected_context": "Hướng dẫn năm 2026 quy định cửa sổ đăng ký từ 2/7 đến 17 giờ 14/7.",
+    "question_source": "data/standardized/news/01_toan_van_cong_van_2304_bgddt_gddh_huong_dan_tuyen_sinh_dai_hoc_cao_dang_2026.md#Mốc-thời-gian",
+    "answer_sources": [
+      {
+        "source_id": "NEWS_GUIDANCE_2304_2026",
+        "path": "data/standardized/news/01_toan_van_cong_van_2304_bgddt_gddh_huong_dan_tuyen_sinh_dai_hoc_cao_dang_2026.md",
+        "title": "Hướng dẫn tuyển sinh đại học, cao đẳng năm 2026",
+        "locator": "Mục Mốc thời gian then chốt",
+        "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-cong-van-2304-bgddt-gddh-huong-dan-tuyen-sinh-dai-hoc-cao-dang-2026-119260505052505936.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "time_sensitive",
+    "note": "Phải trả lời đủ ngày bắt đầu, giờ và ngày kết thúc."
+  },
+  {
+    "id": "GQ-006",
+    "question": "Thời gian nộp lệ phí xét tuyển trực tuyến năm 2026 là khi nào?",
+    "expected_answer": "Từ ngày 15/07/2026 đến 17 giờ ngày 21/07/2026.",
+    "expected_context": "Kế hoạch và hướng dẫn thanh toán cùng xác nhận cửa sổ nộp lệ phí 15-21/7/2026.",
+    "question_source": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md#Lịch-thanh-toán",
+    "answer_sources": [
+      {
+        "source_id": "NEWS_PAYMENT_2026",
+        "path": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md",
+        "title": "Hướng dẫn thanh toán trực tuyến lệ phí xét tuyển đại học 2026",
+        "locator": "Mục lịch thanh toán theo tỉnh thành",
+        "url": "https://xaydungchinhsach.chinhphu.vn/huong-dan-thanh-toan-truc-tuyen-le-phi-xet-tuyen-dai-hoc-2026-119260716115111114.htm"
+      },
+      {
+        "source_id": "NEWS_TIMELINE_2026",
+        "path": "data/standardized/news/02_tuyen_sinh_2026_cac_moc_thoi_gian_quan_trong_thi_sinh_can_nho.md",
+        "title": "Các mốc thời gian quan trọng tuyển sinh 2026",
+        "locator": "Mục thời gian đăng ký và lệ phí",
+        "url": "https://xaydungchinhsach.chinhphu.vn/tuyen-sinh-2026-cac-moc-thoi-gian-quan-trong-thi-sinh-can-nho-119260206155449664.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "multi_source_corroboration",
+    "note": "Hai nguồn độc lập trong corpus cho cùng một mốc."
+  },
+  {
+    "id": "GQ-007",
+    "question": "Hạn thông báo trúng tuyển đợt 1 và hạn xác nhận nhập học trực tuyến đợt 1 năm 2026 là khi nào?",
+    "expected_answer": "Cơ sở đào tạo thông báo trúng tuyển đợt 1 trước 17 giờ ngày 13/08/2026; thí sinh xác nhận nhập học trực tuyến trước 17 giờ ngày 21/08/2026.",
+    "expected_context": "Bài mốc thời gian tách rõ hạn của cơ sở đào tạo và hạn của thí sinh.",
+    "question_source": "data/standardized/news/02_tuyen_sinh_2026_cac_moc_thoi_gian_quan_trong_thi_sinh_can_nho.md#Thông-báo-và-nhập-học",
+    "answer_sources": [
+      {
+        "source_id": "NEWS_TIMELINE_2026",
+        "path": "data/standardized/news/02_tuyen_sinh_2026_cac_moc_thoi_gian_quan_trong_thi_sinh_can_nho.md",
+        "title": "Các mốc thời gian quan trọng tuyển sinh 2026",
+        "locator": "Mục Thời gian thông báo thí sinh trúng tuyển, nhập học",
+        "url": "https://xaydungchinhsach.chinhphu.vn/tuyen-sinh-2026-cac-moc-thoi-gian-quan-trong-thi-sinh-can-nho-119260206155449664.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "two_part_timeline",
+    "note": "Không đảo hai mốc 13/8 và 21/8."
+  },
+  {
+    "id": "GQ-008",
+    "question": "Theo hướng dẫn thanh toán vận hành năm 2026, nhóm thí sinh nào phải nộp lệ phí xét tuyển trực tuyến?",
+    "expected_answer": "Hướng dẫn thanh toán năm 2026 nêu rằng chỉ thí sinh có đăng ký nguyện vọng theo phương thức xét bằng điểm thi tốt nghiệp THPT phải nộp lệ phí trực tuyến. Quy chế chung chỉ nói thí sinh đợt 1 nộp lệ phí một lần, nên câu trả lời phải gắn với hướng dẫn vận hành năm 2026.",
+    "expected_context": "Nguồn hướng dẫn thanh toán thu hẹp nghĩa vụ theo phương thức xét điểm thi, trong khi Điều 14 khoản 6 của quy chế diễn đạt nghĩa vụ lệ phí ở mức chung.",
+    "question_source": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md#Lưu-ý-chung",
+    "answer_sources": [
+      {
+        "source_id": "NEWS_PAYMENT_2026",
+        "path": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md",
+        "title": "Hướng dẫn thanh toán trực tuyến lệ phí xét tuyển đại học 2026",
+        "locator": "Mục Lưu ý chung",
+        "url": "https://xaydungchinhsach.chinhphu.vn/huong-dan-thanh-toan-truc-tuyen-le-phi-xet-tuyen-dai-hoc-2026-119260716115111114.htm"
+      },
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 14 khoản 6",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "hard",
+    "case_type": "general_rule_vs_operational_guidance",
+    "note": "Không xóa bỏ khác biệt; phải nêu rõ nguồn hướng dẫn năm 2026 và phạm vi của câu trả lời."
+  },
+  {
+    "id": "GQ-009",
+    "question": "Thí sinh phải thanh toán lệ phí xét tuyển năm 2026 bằng cách nào và trên kênh nào?",
+    "expected_answer": "Thanh toán trực tuyến bằng mã QR trên Hệ thống đăng ký xét tuyển; không thanh toán qua kênh khác nếu Bộ GDĐT chưa có thông báo chính thức.",
+    "expected_context": "Hướng dẫn thanh toán quy định mã QR và giới hạn kênh thanh toán ở Hệ thống xét tuyển chính thức.",
+    "question_source": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md#Lưu-ý-chung",
+    "answer_sources": [
+      {
+        "source_id": "NEWS_PAYMENT_2026",
+        "path": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md",
+        "title": "Hướng dẫn thanh toán trực tuyến lệ phí xét tuyển đại học 2026",
+        "locator": "Mục Lưu ý chung",
+        "url": "https://xaydungchinhsach.chinhphu.vn/huong-dan-thanh-toan-truc-tuyen-le-phi-xet-tuyen-dai-hoc-2026-119260716115111114.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "procedural",
+    "note": "Không gợi ý chuyển khoản ngoài hệ thống."
+  },
+  {
+    "id": "GQ-010",
+    "question": "Mức điểm ưu tiên khu vực KV1, KV2-NT, KV2 và KV3 trong tuyển sinh 2026 lần lượt là bao nhiêu?",
+    "expected_answer": "KV1: 0,75 điểm; KV2-NT: 0,50 điểm; KV2: 0,25 điểm; KV3: 0 điểm.",
+    "expected_context": "Điều 7 khoản 1 quy định bốn mức ưu tiên khu vực trên thang điểm 30.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-7-khoản-1",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 7 khoản 1 điểm a",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      },
+      {
+        "source_id": "NEWS_PRIORITY_2026",
+        "path": "data/standardized/news/03_chinh_sach_uu_tien_trong_tuyen_sinh_dai_hoc.md",
+        "title": "Chính sách ưu tiên trong tuyển sinh đại học 2026",
+        "locator": "Mục Chính sách ưu tiên theo khu vực",
+        "url": "https://xaydungchinhsach.chinhphu.vn/chinh-sach-uu-tien-trong-tuyen-sinh-dai-hoc-119260227153842885.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "multi_source_corroboration",
+    "note": "Cần liệt kê đủ bốn khu vực."
+  },
+  {
+    "id": "GQ-011",
+    "question": "Nhóm ưu tiên UT1 và UT2 được cộng bao nhiêu điểm, và thí sinh thuộc nhiều diện ưu tiên có được cộng dồn không?",
+    "expected_answer": "UT1 được 2,00 điểm, UT2 được 1,00 điểm. Thí sinh thuộc nhiều diện chỉ hưởng một mức ưu tiên cao nhất, không cộng dồn.",
+    "expected_context": "Điều 7 khoản 2 quy định mức UT1, UT2 và nguyên tắc chỉ dùng mức cao nhất.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-7-khoản-2",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 7 khoản 2",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "compound_rule",
+    "note": "Kiểm tra cả mức điểm và nguyên tắc không cộng dồn."
+  },
+  {
+    "id": "GQ-012",
+    "question": "Điểm ưu tiên của thí sinh có tổng điểm từ 22,50 trở lên được tính theo công thức nào?",
+    "expected_answer": "Điểm ưu tiên = [(30 - Tổng điểm đạt được) / 7,50] × Mức điểm ưu tiên theo khu vực hoặc đối tượng; kết quả làm tròn đến hàng phần trăm.",
+    "expected_context": "Điều 7 khoản 4 giảm dần điểm ưu tiên từ mốc tổng điểm 22,50 bằng công thức nêu trên.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-7-khoản-4",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 7 khoản 4",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "formula",
+    "note": "Giữ đúng dấu trừ, mẫu số 7,50 và yêu cầu làm tròn."
+  },
+  {
+    "id": "GQ-013",
+    "question": "Xét tuyển bằng học bạ từ năm 2026 phải sử dụng kết quả học tập như thế nào?",
+    "expected_answer": "Dùng điểm trung bình cả năm của đủ lớp 10, 11 và 12 cho tối thiểu ba môn; phải có Toán hoặc Ngữ văn với trọng số tối thiểu một phần ba. Nếu dùng chứng chỉ ngoại ngữ thay môn ngoại ngữ thì có thể dùng tối thiểu hai môn học, trong đó vẫn phải có Toán hoặc Ngữ văn.",
+    "expected_context": "Điều 6 khoản 5 quy định cấu trúc sáu học kỳ, số môn và vai trò bắt buộc của Toán hoặc Ngữ văn.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-6-khoản-5",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 6 khoản 5",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "conditional_rule",
+    "note": "Phân biệt trường hợp ba môn thông thường và hai môn cộng chứng chỉ ngoại ngữ."
+  },
+  {
+    "id": "GQ-014",
+    "question": "Một cơ sở đào tạo được sử dụng tối đa bao nhiêu phương thức tuyển sinh và những hình thức nào không tính vào giới hạn đó?",
+    "expected_answer": "Tối đa 05 phương thức. Không tính xét tuyển thẳng, xét tuyển đối tượng cử tuyển và xét tuyển đối tượng dự bị đại học vào giới hạn này.",
+    "expected_context": "Điều 6 khoản 1 nêu giới hạn năm phương thức cùng ba ngoại lệ.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-6-khoản-1",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 6 khoản 1",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "rule_with_exceptions",
+    "note": "Không trả lời thiếu các ngoại lệ cử tuyển và dự bị đại học."
+  },
+  {
+    "id": "GQ-015",
+    "question": "Tổng điểm cộng trong xét tuyển bị giới hạn thế nào trên thang điểm 30?",
+    "expected_answer": "Tổng điểm cộng gồm điểm thưởng, điểm xét thưởng và điểm khuyến khích không vượt quá 10% điểm tối đa, tức tối đa 3 điểm trên thang 30; tổng điểm xét kể cả điểm cộng và ưu tiên không được vượt 30.",
+    "expected_context": "Điều 6 khoản 2 giới hạn điểm cộng ở 10% và chặn tổng điểm xét ở mức tối đa của thang điểm.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-6-khoản-2",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 6 khoản 2 điểm c và d",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "numeric_constraint",
+    "note": "Phân biệt tổng điểm cộng tối đa 3 với tổng điểm xét tối đa 30."
+  },
+  {
+    "id": "GQ-016",
+    "question": "Một chứng chỉ ngoại ngữ có thể vừa quy đổi thành điểm môn ngoại ngữ vừa nhận điểm khuyến khích trong cùng hồ sơ xét tuyển không?",
+    "expected_answer": "Không. Chứng chỉ ngoại ngữ chỉ được dùng theo một trong hai cách: quy đổi thành điểm môn ngoại ngữ trong tổ hợp hoặc dùng làm căn cứ điểm khuyến khích.",
+    "expected_context": "Điều 6 khoản 4 điểm d dùng từ hoặc để tách hai cách sử dụng chứng chỉ.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-6-khoản-4",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 6 khoản 4 điểm d",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      },
+      {
+        "source_id": "NEWS_NEW_RULES_2026",
+        "path": "data/standardized/news/05_nhung_diem_moi_trong_quy_che_tuyen_sinh_dai_hoc_2026.md",
+        "title": "Những điểm mới trong Quy chế tuyển sinh đại học 2026",
+        "locator": "Mục Nhiều điểm mới",
+        "url": "https://xaydungchinhsach.chinhphu.vn/nhung-diem-moi-trong-quy-che-tuyen-sinh-dai-hoc-2026-119260215183555963.htm"
+      }
+    ],
+    "difficulty": "hard",
+    "case_type": "exclusive_or",
+    "note": "Từ 'hoặc' là điều kiện loại trừ việc hưởng đồng thời hai lợi ích từ cùng chứng chỉ."
+  },
+  {
+    "id": "GQ-017",
+    "question": "Những trường hợp nào được bảo lưu kết quả trúng tuyển và thời gian tối đa là bao lâu?",
+    "expected_answer": "Được bảo lưu khi phải thực hiện nghĩa vụ quân sự, công an hoặc thanh niên xung phong tập trung ngay trong năm trúng tuyển; hoặc bị bệnh nặng, tai nạn nghiêm trọng không thể nhập học đúng hạn và có xác nhận y tế phù hợp. Thời gian tối đa do trường quy định nhưng không quá 36 tháng.",
+    "expected_context": "Điều 10 quy định hai nhóm lý do bảo lưu, yêu cầu minh chứng và trần 36 tháng.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-10",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 10 khoản 1 và 2",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "multi_condition",
+    "note": "Không khái quát rằng mọi lý do cá nhân đều được bảo lưu."
+  },
+  {
+    "id": "GQ-018",
+    "question": "Thông tin tuyển sinh đã công bố phải được duy trì công khai tối thiểu bao lâu?",
+    "expected_answer": "Tối thiểu 04 năm liên tục kể từ ngày công bố; nếu cập nhật phải ghi rõ thời điểm cập nhật.",
+    "expected_context": "Điều 11 khoản 3 đặt thời hạn công khai bốn năm và yêu cầu ghi dấu thời điểm cập nhật.",
+    "question_source": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md#Điều-11-khoản-3",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 11 khoản 3",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "single_source",
+    "note": "Cần nêu thêm yêu cầu ghi thời điểm khi cập nhật."
+  },
+  {
+    "id": "GQ-019",
+    "question": "Theo Thông tư 34/2026/TT-BGDĐT, 'số thực tuyển trong một năm' được xác định tại thời điểm nào?",
+    "expected_answer": "Tại thời điểm ngày 31/12 của năm tuyển sinh, tính số người đã trúng tuyển, hoàn thành thủ tục nhập học và đăng ký học tập.",
+    "expected_context": "Điều 2 khoản 2 định nghĩa số thực tuyển bằng trạng thái người học tại ngày cuối năm.",
+    "question_source": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md#Điều-2-khoản-2",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT34_2026",
+        "path": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md",
+        "title": "Thông tư 34/2026/TT-BGDĐT",
+        "locator": "Điều 2 khoản 2",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-34-2026-tt-bgddt-469435.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "definition",
+    "note": "Phân biệt số trúng tuyển ban đầu với số đã hoàn tất nhập học và đăng ký học tập."
+  },
+  {
+    "id": "GQ-020",
+    "question": "Tỷ lệ người tốt nghiệp có việc làm trong Thông tư 34 được tính sau bao lâu kể từ ngày công nhận tốt nghiệp?",
+    "expected_answer": "Sau 12 tháng kể từ ngày có quyết định công nhận tốt nghiệp, và việc làm phải phù hợp với trình độ chuyên môn được đào tạo.",
+    "expected_context": "Điều 2 khoản 7 xác định cửa sổ đo lường 12 tháng và yêu cầu phù hợp chuyên môn.",
+    "question_source": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md#Điều-2-khoản-7",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT34_2026",
+        "path": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md",
+        "title": "Thông tư 34/2026/TT-BGDĐT",
+        "locator": "Điều 2 khoản 7",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-34-2026-tt-bgddt-469435.htm"
+      }
+    ],
+    "difficulty": "easy",
+    "case_type": "definition",
+    "note": "Không bỏ điều kiện việc làm phù hợp trình độ chuyên môn."
+  },
+  {
+    "id": "GQ-021",
+    "question": "Theo trình tự mới của Thông tư 34, cơ sở đào tạo phải cập nhật dữ liệu năng lực và cập nhật số lượng tuyển sinh trước các hạn nào?",
+    "expected_answer": "Chậm nhất ngày 30/01 hằng năm phải hoàn thành cập nhật dữ liệu giáo dục đại học; chậm nhất ngày 28/02 hằng năm phải xác định và cập nhật số lượng tuyển sinh. Các quy định trình tự này áp dụng cho khóa tuyển sinh từ năm 2027.",
+    "expected_context": "Điều 6 đặt hai hạn 30/1 và 28/2, còn Điều 9 khoản 2 lùi hiệu lực của Điều 6 đến khóa tuyển sinh 2027.",
+    "question_source": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md#Điều-6",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT34_2026",
+        "path": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md",
+        "title": "Thông tư 34/2026/TT-BGDĐT",
+        "locator": "Điều 6 khoản 1, 2 và Điều 9 khoản 2",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-34-2026-tt-bgddt-469435.htm"
+      }
+    ],
+    "difficulty": "hard",
+    "case_type": "effective_date_scope",
+    "note": "Không áp các hạn mới này cho khóa 2026 mà bỏ qua điều khoản hiệu lực riêng."
+  },
+  {
+    "id": "GQ-022",
+    "question": "Năm tuyển sinh 2026 xác định số lượng tuyển sinh theo ngay toàn bộ cơ chế mới của Thông tư 34/2026 hay theo quy định chuyển tiếp?",
+    "expected_answer": "Theo quy định chuyển tiếp: năm 2026 vẫn xác định và báo cáo theo Thông tư 03/2022/TT-BGDĐT, đã được sửa đổi bởi Thông tư 10/2023/TT-BGDĐT. Nhiều điều và biểu mẫu mới của Thông tư 34 chỉ áp dụng từ khóa tuyển sinh 2027.",
+    "expected_context": "Điều 9 khoản 2 và Điều 10 khoản 2, 3 tách hiệu lực chung của Thông tư 34 khỏi cơ chế dùng riêng cho năm 2026.",
+    "question_source": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md#Điều-9-và-10",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_TT34_2026",
+        "path": "data/standardized/legal/thong_tu_34_2026_xac_dinh_so_luong_tuyen_sinh.md",
+        "title": "Thông tư 34/2026/TT-BGDĐT",
+        "locator": "Điều 9 khoản 2; Điều 10 khoản 2 và 3",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-34-2026-tt-bgddt-469435.htm"
+      }
+    ],
+    "difficulty": "hard",
+    "case_type": "transitional_rule",
+    "note": "Ngày hiệu lực 19/4/2026 không đồng nghĩa mọi công thức mới áp dụng ngay cho chỉ tiêu 2026."
+  },
+  {
+    "id": "GQ-023",
+    "question": "Quyết định 955/QĐ-ĐHQGHN có phải là quy chế áp dụng cho tất cả trường đại học trên toàn quốc không?",
+    "expected_answer": "Không. Đây là quy chế tuyển sinh nội bộ của Đại học Quốc gia Hà Nội, áp dụng cho các đơn vị, chương trình và các bên liên quan trong hệ thống ĐHQGHN; quy chế quốc gia là Thông tư 06/2026/TT-BGDĐT.",
+    "expected_context": "Phạm vi Điều 1 của Quyết định 955 giới hạn ở ĐHQGHN, trong khi Điều 1 của Thông tư 06 quy định phạm vi tuyển sinh đại học và cao đẳng Giáo dục Mầm non trên toàn quốc.",
+    "question_source": "data/standardized/legal/quyet_dinh_955_2026_quy_che_tuyen_sinh_dhqghn.md#Điều-1",
+    "answer_sources": [
+      {
+        "source_id": "LEGAL_QD955_VNU_2026",
+        "path": "data/standardized/legal/quyet_dinh_955_2026_quy_che_tuyen_sinh_dhqghn.md",
+        "title": "Quyết định 955/QĐ-ĐHQGHN",
+        "locator": "Điều 1 phạm vi và đối tượng áp dụng",
+        "url": "https://vnu.edu.vn/ban-hanh-quy-che-tuyen-sinh-dai-hoc-tai-dai-hoc-quoc-gia-ha-noi-doc2759.html"
+      },
+      {
+        "source_id": "LEGAL_TT06_2026",
+        "path": "data/standardized/legal/thong_tu_06_2026_quy_che_tuyen_sinh.md",
+        "title": "Thông tư 06/2026/TT-BGDĐT",
+        "locator": "Điều 1 phạm vi và đối tượng áp dụng",
+        "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-06-2026-tt-bgddt-469029.htm"
+      }
+    ],
+    "difficulty": "hard",
+    "case_type": "scope_disambiguation",
+    "note": "Không khái quát quy định riêng của ĐHQGHN thành quy định chung toàn quốc."
+  },
+  {
+    "id": "GQ-024",
+    "question": "Nếu cần hỗ trợ chung về đăng ký nguyện vọng hoặc gặp lỗi ở cổng thanh toán lệ phí, thí sinh liên hệ số nào?",
+    "expected_answer": "Hỗ trợ chung về hệ thống đăng ký nguyện vọng: 1800 8000, nhánh 2. Lỗi phát sinh từ bước chọn phương thức thanh toán trên Cổng Dịch vụ công Quốc gia: 18001096.",
+    "expected_context": "Hướng dẫn thanh toán phân biệt tổng đài tuyển sinh chung với tổng đài xử lý lỗi cổng thanh toán.",
+    "question_source": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md#Kênh-hỗ-trợ",
+    "answer_sources": [
+      {
+        "source_id": "NEWS_PAYMENT_2026",
+        "path": "data/standardized/news/04_huong_dan_thanh_toan_truc_tuyen_le_phi_xet_tuyen_dai_hoc_2026.md",
+        "title": "Hướng dẫn thanh toán trực tuyến lệ phí xét tuyển đại học 2026",
+        "locator": "Mục Các kênh thông tin hỗ trợ",
+        "url": "https://xaydungchinhsach.chinhphu.vn/huong-dan-thanh-toan-truc-tuyen-le-phi-xet-tuyen-dai-hoc-2026-119260716115111114.htm"
+      }
+    ],
+    "difficulty": "medium",
+    "case_type": "two_part_procedural",
+    "note": "Phải ánh xạ đúng loại sự cố với đúng tổng đài."
+  }
+]

@@ -40,38 +40,42 @@ Câu hỏi: {query}
 Đoạn văn:"""
 
 
-def _call_llm(prompt: str) -> str:
+def _call_llm(
+    prompt: str,
+    provider: str = LLM_PROVIDER,
+    model: str = LLM_MODEL,
+) -> str:
     """Gọi LLM theo LLM_PROVIDER. Chỉ dùng cho HyDE, không phải cho generation."""
-    if LLM_PROVIDER == "openai":
+    if provider == "openai":
         from openai import OpenAI
 
         client = OpenAI(timeout=HYDE_TIMEOUT)
         response = client.chat.completions.create(
-            model=LLM_MODEL,
+            model=model,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.0,
             max_tokens=200,
         )
         return response.choices[0].message.content or ""
 
-    if LLM_PROVIDER == "gemini":
+    if provider == "gemini":
         from google import genai
 
         client = genai.Client()
-        return client.models.generate_content(model=LLM_MODEL, contents=prompt).text or ""
+        return client.models.generate_content(model=model, contents=prompt).text or ""
 
-    if LLM_PROVIDER == "anthropic":
+    if provider == "anthropic":
         import anthropic
 
         client = anthropic.Anthropic(timeout=HYDE_TIMEOUT)
         message = client.messages.create(
-            model=LLM_MODEL,
+            model=model,
             max_tokens=200,
             messages=[{"role": "user", "content": prompt}],
         )
         return "".join(block.text for block in message.content if block.type == "text")
 
-    raise ValueError(f"LLM_PROVIDER không hỗ trợ: {LLM_PROVIDER}")
+    raise ValueError(f"LLM_PROVIDER không hỗ trợ: {provider}")
 
 
 def expand_query(query: str) -> str:
@@ -91,6 +95,20 @@ def expand_query(query: str) -> str:
     if not hypothetical:
         return query
     return f"{query}\n{hypothetical}"
+
+
+def expand_query_configured(query: str, provider: str, model: str) -> str:
+    """HyDE using request-scoped provider/model without mutating module globals."""
+    if not query.strip():
+        return query
+    try:
+        hypothetical = _call_llm(
+            HYDE_PROMPT.format(query=query), provider=provider, model=model
+        ).strip()
+    except Exception as error:
+        print(f"[hyde] Bỏ qua mở rộng, dùng query gốc: {type(error).__name__}: {error}")
+        return query
+    return f"{query}\n{hypothetical}" if hypothetical else query
 
 
 if __name__ == "__main__":

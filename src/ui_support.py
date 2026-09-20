@@ -7,6 +7,7 @@ from .web_app.support import (
     STANDARDIZED,
     load_corpus_catalog,
     load_evaluation_status,
+    load_golden_questions,
     retrieval_label,
     run_generation,
 )
@@ -18,6 +19,7 @@ __all__ = [
     "STANDARDIZED",
     "load_corpus_catalog",
     "load_evaluation_status",
+    "load_golden_questions",
     "retrieval_label",
     "run_generation",
 ]

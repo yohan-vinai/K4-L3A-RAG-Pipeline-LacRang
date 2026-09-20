@@ -26,7 +26,8 @@ def _source():
 
 @pytest.fixture
 def api_server():
-    def generator(query, top_k):
+    def generator(query, top_k, config):
+        assert top_k == config.top_k
         return {
             "answer": f"Câu trả lời cho {query} [1]",
             "sources": [_source()],
@@ -61,13 +62,29 @@ def test_serves_frontend_health_catalog_and_evaluation(api_server):
     assert health["corpus_sources"] == 8
 
     _, catalog = _json(f"{api_server}/api/catalog")
-    assert catalog["summary"] == {"total": 8, "legal": 3, "news": 5}
+    assert catalog["summary"] == {
+        "total": 8,
+        "chunks": 627,
+        "legal": 3,
+        "news": 5,
+    }
     assert len(catalog["sources"]) == 8
+    assert all(source["chunk_count"] > 0 for source in catalog["sources"])
 
     _, evaluation = _json(f"{api_server}/api/evaluation")
     assert isinstance(evaluation["golden_count"], int)
     assert evaluation["golden_count"] >= 0
     assert isinstance(evaluation["report_ready"], bool)
+
+    _, golden_questions = _json(f"{api_server}/api/golden-questions")
+    assert len(golden_questions["questions"]) >= 20
+    assert golden_questions["questions"][0]["id"] == "GQ-001"
+
+    _, config = _json(f"{api_server}/api/config")
+    assert config["defaults"]["strategy"] == "hybrid"
+    assert {"hybrid", "dense", "bm25", "pageindex"} <= set(
+        config["options"]["strategies"]
+    )
 
 
 def test_chat_endpoint_uses_public_generation_contract(api_server):
@@ -78,6 +95,30 @@ def test_chat_endpoint_uses_public_generation_contract(api_server):
     assert result["status"] == "answered"
     assert result["retrieval_source"] == "hybrid"
     assert result["sources"][0]["metadata"]["title"] == "Tài liệu kiểm thử"
+    assert result["config"]["top_k"] == 5
+
+
+def test_chat_endpoint_accepts_request_scoped_configuration(api_server):
+    config = {
+        "strategy": "dense",
+        "top_k": 3,
+        "score_threshold": 0.62,
+        "rrf_k": 40,
+        "use_pageindex": False,
+        "use_hyde": False,
+        "use_model_rerank": False,
+        "provider": "gemini",
+        "model": "gemini-test",
+        "temperature": 0.1,
+        "response_style": "steps",
+        "show_trace": False,
+    }
+    status, result = _json(
+        f"{api_server}/api/chat",
+        payload={"query": "mốc tuyển sinh", "config": config},
+    )
+    assert status == 200
+    assert result["config"] == config
 
 
 def test_chat_endpoint_rejects_invalid_input(api_server):
@@ -87,4 +128,11 @@ def test_chat_endpoint_rejects_invalid_input(api_server):
 
     with pytest.raises(HTTPError) as error:
         _json(f"{api_server}/api/chat", payload={"query": "ok", "top_k": 20})
+    assert error.value.code == 400
+
+    with pytest.raises(HTTPError) as error:
+        _json(
+            f"{api_server}/api/chat",
+            payload={"query": "ok", "config": {"strategy": "unknown"}},
+        )
     assert error.value.code == 400

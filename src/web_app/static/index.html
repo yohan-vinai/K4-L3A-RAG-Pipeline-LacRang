@@ -49,9 +49,7 @@
           <button data-view="settings"><svg class="icon"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6 1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1z"/></svg>Cài đặt RAG</button>
         </nav>
         <div class="side-label">Gần đây</div>
-        <button class="conversation" data-question="Những mốc tuyển sinh quan trọng năm 2026 là gì?"><span>Mốc tuyển sinh năm 2026</span><small>2 phút trước</small></button>
-        <button class="conversation" data-question="Điểm ưu tiên được tính như thế nào?"><span>Cách tính điểm ưu tiên</span><small>Hôm qua</small></button>
-        <button class="conversation" data-question="Chứng chỉ tiếng Anh có được dùng hai lần không?"><span>Quy định về chứng chỉ</span><small>18 thg 9</small></button>
+        <div id="goldenQuestionList" aria-live="polite"></div>
       </div>
       <div class="user-card"><div class="avatar">VH</div><div class="od-fill"><strong>Vo Phu Han</strong><small>Không gian nhà phát triển</small></div><button class="action-mini" aria-label="Tùy chọn tài khoản">•••</button></div>
     </aside>
@@ -88,7 +86,7 @@
 
       <section class="view page-view" id="evaluationView" data-name="evaluation"><header class="topbar"><button class="icon-btn mobile-menu" aria-label="Mở điều hướng"><svg class="icon"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="title-group"><strong>Đánh giá</strong><small>Không gian so sánh có căn cứ</small></div><span class="demo-label">Kết quả minh họa</span></header><div class="page-scroll"><div class="page-shell"><div class="page-heading"><div><h1>Đánh giá truy xuất</h1><p>So sánh các cấu hình truy xuất trên cùng bộ dữ liệu vàng 24 câu mà không trộn lẫn chỉ số truy xuất với chất lượng câu trả lời.</p></div><button class="primary-btn" id="runEval"><svg class="icon"><path d="m5 3 14 9-14 9z"/></svg>Chạy đánh giá</button></div><div class="eval-grid"><div class="panel"><div class="panel-head"><div><h2>So sánh cấu hình</h2><p>Cùng mô hình sinh, mô hình chấm, prompt và top_k</p></div><span class="demo-label">Minh họa</span></div><div class="config-compare"><article class="config-card"><small>CẤU HÌNH A</small><h3>Chỉ dense</h3><dl><dt>Bộ truy xuất</dt><dd>vector</dd><dt>top_k</dt><dd>5</dd><dt>Dự phòng</dt><dd>tắt</dd></dl></article><article class="config-card selected"><small>CẤU HÌNH B</small><h3>Hybrid + RRF</h3><dl><dt>Bộ truy xuất</dt><dd>dense+BM25</dd><dt>RRF k</dt><dd>60</dd><dt>Dự phòng</dt><dd>PageIndex</dd></dl></article></div><div style="margin-top:24px"><div class="metric-row"><label>Tính trung thực</label><div class="bar"><span style="width:89%"></span></div><b>0.89</b></div><div class="metric-row"><label>Độ liên quan câu trả lời</label><div class="bar"><span style="width:86%"></span></div><b>0.86</b></div><div class="metric-row"><label>Độ phủ ngữ cảnh</label><div class="bar"><span style="width:92%"></span></div><b>0.92</b></div><div class="metric-row"><label>Độ chính xác ngữ cảnh</label><div class="bar"><span style="width:83%"></span></div><b>0.83</b></div></div><p style="font-size:11px;color:var(--meta);margin:20px 0 0">Chỉ là giá trị minh họa cho prototype. Báo cáo đánh giá trong repository hiện vẫn chứa dữ liệu chờ hoàn thiện.</p></div><aside class="panel"><div class="panel-head"><div><h2>Ca khó</h2><p>Xung đột nguồn và bẫy phạm vi</p></div></div><div class="case-list"><div class="case"><span class="case-id">GQ-001</span><div><strong>Điểm dự thảo và quy định chính thức</strong><small>Ưu tiên văn bản pháp lý đã ban hành hơn bản tóm tắt cũ.</small></div></div><div class="case"><span class="case-id">GQ-016</span><div><strong>Cách dùng chứng chỉ tiếng Anh</strong><small>Giữ đúng giới hạn “một trong hai”.</small></div></div><div class="case"><span class="case-id">GQ-021</span><div><strong>Ngày hiệu lực và ngày áp dụng</strong><small>Tách hiệu lực pháp lý khỏi lộ trình áp dụng.</small></div></div><div class="case"><span class="case-id">GQ-023</span><div><strong>Phạm vi quốc gia và ĐHQGHN</strong><small>Không khái quát quy định cấp trường.</small></div></div></div></aside></div></div></div></section>
 
-      <section class="view page-view" id="settingsView" data-name="settings"><header class="topbar"><button class="icon-btn mobile-menu" aria-label="Mở điều hướng"><svg class="icon"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="title-group"><strong>Cài đặt RAG</strong><small>Điều khiển cấu hình mẫu</small></div><button class="primary-btn" id="saveSettings">Lưu thay đổi</button></header><div class="page-scroll"><div class="page-shell"><div class="page-heading"><div><h1>Cấu hình pipeline</h1><p>Giữ mặc định an toàn cho người dùng phổ thông, đồng thời cung cấp các điều khiển truy xuất và sinh câu trả lời nâng cao.</p></div></div><div class="settings-grid"><nav class="settings-menu"><button class="active">Truy xuất</button><button>Sinh câu trả lời</button><button>Dự phòng</button><button>Phong cách trả lời</button></nav><div><section class="settings-section"><h2>Chiến lược truy xuất</h2><p>Kiểm soát cách tìm và hợp nhất bằng chứng trước khi sinh câu trả lời.</p><div class="form-grid"><div class="field"><label for="strategy">Chiến lược tìm kiếm</label><select id="strategy"><option>Hybrid + RRF</option><option>Chỉ dense</option><option>Chỉ BM25</option><option>Chỉ PageIndex</option></select><small>Hybrid kết hợp khớp ngữ nghĩa và từ khóa chính xác.</small></div><div class="field"><label for="topK">Số chunk trả về</label><div class="range-line"><input id="topK" type="range" min="3" max="10" value="5"><span class="range-value" id="topKValue">5</span></div><small>Số chunk bằng chứng tối đa gửi tới mô hình sinh.</small></div><div class="field"><label for="threshold">Ngưỡng dự phòng</label><div class="range-line"><input id="threshold" type="range" min="0" max="1" value="0.3" step="0.05"><span class="range-value" id="thresholdValue">0.30</span></div><small>So sánh với điểm cosine dense gốc.</small></div><div class="field"><label for="rrfK">Hằng số RRF</label><input id="rrfK" value="60" inputmode="numeric"><small>Hằng số hợp nhất thứ hạng; chỉ hợp nhất một lần.</small></div></div></section><section class="settings-section"><h2>Hành vi pipeline</h2><p>Khi lỗi, hệ thống phải suy giảm an toàn thay vì làm hỏng cuộc trò chuyện.</p><div><div class="toggle-row"><div><strong>Hợp nhất thứ hạng nghịch đảo</strong><small>Hợp nhất ứng viên dense và BM25.</small></div><button class="switch on" aria-pressed="true"><span></span></button></div><div class="toggle-row"><div><strong>Dự phòng PageIndex</strong><small>Dùng truy xuất không vector khi điểm thấp hơn ngưỡng.</small></div><button class="switch on" aria-pressed="true"><span></span></button></div><div class="toggle-row"><div><strong>Hiển thị luồng xử lý</strong><small>Hiển thị thời gian từng bước và tuyến xử lý cho người dùng kỹ thuật.</small></div><button class="switch on" aria-pressed="true"><span></span></button></div></div></section><section class="settings-section"><h2>Sinh câu trả lời</h2><p>Chọn hành vi mô hình sau khi ngữ cảnh có căn cứ được tạo.</p><div class="form-grid"><div class="field"><label for="provider">Nhà cung cấp</label><select id="provider"><option>OpenAI</option><option>Gemini</option><option>Anthropic</option></select></div><div class="field"><label for="model">Mô hình</label><select id="model"><option>Cấu hình trong môi trường</option><option>Mô hình mẫu A</option><option>Mô hình mẫu B</option></select></div><div class="field"><label for="temperature">Độ ngẫu nhiên</label><div class="range-line"><input id="temperature" type="range" min="0" max="1" value="0.3" step="0.1"><span class="range-value" id="temperatureValue">0.3</span></div></div><div class="field"><label for="responseStyle">Phong cách trả lời</label><select id="responseStyle"><option>Ngắn gọn, có trích dẫn</option><option>Giải thích chi tiết</option><option>Hướng dẫn từng bước</option></select></div></div></section></div></div></div></div></section>
+      <section class="view page-view" id="settingsView" data-name="settings"><header class="topbar"><button class="icon-btn mobile-menu" aria-label="Mở điều hướng"><svg class="icon"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="title-group"><strong>Cài đặt RAG</strong><small>Cấu hình áp dụng cho từng lượt hỏi</small></div><button class="primary-btn" id="saveSettings">Lưu thay đổi</button></header><div class="page-scroll"><div class="page-shell"><div class="page-heading"><div><h1>Cấu hình pipeline</h1><p>Mỗi lượt hỏi gửi kèm cấu hình đã lưu; API key vẫn chỉ nằm ở backend.</p></div></div><div class="settings-grid"><nav class="settings-menu"><button class="active">Truy xuất</button><button>Sinh câu trả lời</button><button>Dự phòng</button><button>Phong cách trả lời</button></nav><div><section class="settings-section"><h2>Chiến lược truy xuất</h2><p>Kiểm soát cách tìm và hợp nhất bằng chứng trước khi sinh câu trả lời.</p><div class="form-grid"><div class="field"><label for="strategy">Chiến lược tìm kiếm</label><select id="strategy"><option value="hybrid">Hybrid + RRF</option><option value="dense">Chỉ dense</option><option value="bm25">Chỉ BM25</option><option value="pageindex">Chỉ PageIndex</option></select><small>Hybrid kết hợp khớp ngữ nghĩa và từ khóa chính xác.</small></div><div class="field"><label for="topK">Số chunk trả về</label><div class="range-line"><input id="topK" type="range" min="3" max="10" value="5"><span class="range-value" id="topKValue">5</span></div><small>Số chunk bằng chứng tối đa gửi tới mô hình sinh.</small></div><div class="field"><label for="threshold">Ngưỡng dự phòng</label><div class="range-line"><input id="threshold" type="range" min="0" max="1" value="0.54" step="0.01"><span class="range-value" id="thresholdValue">0.54</span></div><small>So sánh với điểm cosine dense gốc.</small></div><div class="field"><label for="rrfK">Hằng số RRF</label><input id="rrfK" type="number" min="1" max="200" value="60"><small>Hằng số hợp nhất thứ hạng; chỉ dùng ở chế độ hybrid.</small></div></div></section><section class="settings-section"><h2>Hành vi pipeline</h2><p>Các tùy chọn này được gửi và thực thi độc lập cho từng lượt hỏi.</p><div><div class="toggle-row"><div><strong>HyDE query expansion</strong><small>Mở rộng câu hỏi bằng một đoạn giả định trước khi truy xuất.</small></div><button class="switch" id="useHyde" aria-pressed="false"><span></span></button></div><div class="toggle-row"><div><strong>Dự phòng PageIndex</strong><small>Dùng truy xuất không vector khi điểm thấp hơn ngưỡng.</small></div><button class="switch on" id="usePageIndex" aria-pressed="true"><span></span></button></div><div class="toggle-row"><div><strong>Cross-encoder reranker</strong><small>Chấm lại ứng viên sau RRF; tự fallback nếu model lỗi.</small></div><button class="switch" id="useModelRerank" aria-pressed="false"><span></span></button></div><div class="toggle-row"><div><strong>Hiển thị luồng xử lý</strong><small>Hiển thị tuyến truy xuất và cấu hình đã áp dụng.</small></div><button class="switch on" id="showTrace" aria-pressed="true"><span></span></button></div></div></section><section class="settings-section"><h2>Sinh câu trả lời</h2><p>Chọn provider, model và phong cách cho từng request; API key không rời backend.</p><div class="form-grid"><div class="field"><label for="provider">Nhà cung cấp</label><select id="provider"><option value="openai">OpenAI</option><option value="gemini">Gemini</option><option value="anthropic">Anthropic</option></select></div><div class="field"><label for="model">Mô hình</label><input id="model" maxlength="120" placeholder="Ví dụ: gpt-4o-mini"><small>Phải là model ID hợp lệ của provider đã chọn.</small></div><div class="field"><label for="temperature">Độ ngẫu nhiên</label><div class="range-line"><input id="temperature" type="range" min="0" max="1" value="0.3" step="0.1"><span class="range-value" id="temperatureValue">0.3</span></div></div><div class="field"><label for="responseStyle">Phong cách trả lời</label><select id="responseStyle"><option value="concise">Ngắn gọn, có trích dẫn</option><option value="detailed">Giải thích chi tiết</option><option value="steps">Hướng dẫn từng bước</option></select></div></div></section></div></div></div></div></section>
     </main>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -132,6 +130,7 @@
     const thread = $('.thread');
     const layout = $('#chatLayout');
     const welcomeTemplate = $('#welcome').cloneNode(true);
+    const configStorageKey = 'rag.pipelineConfig';
     let toastTimer;
     let catalog = [];
 
@@ -229,6 +228,11 @@
     function renderTrace(result) {
       const trace = $('#tracePanel');
       trace.replaceChildren();
+      const config = result.config || readConfig();
+      if (!config.show_trace) {
+        trace.append(element('p', '', 'Luồng xử lý đang được ẩn trong cấu hình.'));
+        return;
+      }
       const step = element('div', 'trace-step');
       step.append(element('span', 'trace-icon', result.status === 'answered' ? '✓' : 'i'));
       const content = element('div');
@@ -237,8 +241,9 @@
         : result.retrieval_source === 'hybrid'
           ? 'Hybrid + RRF'
           : 'Không có tuyến truy xuất';
-      content.append(element('strong', '', route));
-      content.append(element('small', '', `${result.sources.length} nguồn được backend trả về`));
+      const strategies = {hybrid: 'Hybrid + RRF', dense: 'Dense', bm25: 'BM25', pageindex: 'PageIndex'};
+      content.append(element('strong', '', strategies[config.strategy] || route));
+      content.append(element('small', '', `${result.sources.length} nguồn · top_k ${config.top_k} · threshold ${config.score_threshold}`));
       step.append(content);
       trace.append(step);
     }
@@ -269,7 +274,7 @@
         const response = await fetch('/api/chat', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({query: question, top_k: Number($('#topK').value)}),
+          body: JSON.stringify({query: question, config: readConfig()}),
         });
         const result = await response.json();
         if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
@@ -315,7 +320,7 @@
           row.append(element('span', 'tag', doc.doc_type === 'legal' ? 'pháp lý' : 'tin tức'));
           const state = element('span', 'state-pill');
           state.append(element('span', 'dot'), document.createTextNode(' Trong corpus'));
-          row.append(state, element('span', '', '—'));
+          row.append(state, element('span', '', String(doc.chunk_count ?? 0)));
           if (doc.url && /^https?:\/\//.test(doc.url)) {
             const link = element('a', 'action-mini', '↗');
             link.href = doc.url;
@@ -336,12 +341,12 @@
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         catalog = data.sources || [];
-        const {total = 0, legal = 0, news = 0} = data.summary || {};
+        const {total = 0, chunks = 0, legal = 0, news = 0} = data.summary || {};
         $('.title-group small', $('#chatView')).textContent = `Dựa trên ${total} nguồn trong corpus`;
         $('.status', $('#chatView')).lastChild.textContent = ` ${total} nguồn đã nạp`;
         $('.status', $('#knowledgeView')).lastChild.textContent = ` ${total} nguồn trong corpus`;
         const stats = $$('.summary-grid .stat-card b', $('#knowledgeView'));
-        [total, '—', legal, news].forEach((value, index) => { stats[index].textContent = value; });
+        [total, chunks, legal, news].forEach((value, index) => { stats[index].textContent = value; });
         renderDocuments();
       } catch (error) {
         catalog = [];
@@ -366,6 +371,91 @@
         });
       } catch (error) {
         notify('Không tải được trạng thái đánh giá');
+      }
+    }
+
+    async function loadGoldenQuestions() {
+      const list = $('#goldenQuestionList');
+      try {
+        const response = await fetch('/api/golden-questions');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        list.replaceChildren();
+        (data.questions || []).forEach(({id, question}) => {
+          const button = element('button', 'conversation');
+          button.type = 'button';
+          button.dataset.question = question;
+          button.append(element('span', '', question), element('small', '', id));
+          button.addEventListener('click', () => {
+            setView('chat');
+            submitQuestion(question);
+          });
+          list.append(button);
+        });
+        if (!(data.questions || []).length) {
+          list.append(element('small', '', 'Chưa có câu hỏi golden để hiển thị.'));
+        }
+      } catch (error) {
+        list.replaceChildren(element('small', '', 'Không tải được bộ câu hỏi golden.'));
+      }
+    }
+
+    function switchValue(id) {
+      return $(`#${id}`).getAttribute('aria-pressed') === 'true';
+    }
+
+    function setSwitch(id, value) {
+      const button = $(`#${id}`);
+      button.setAttribute('aria-pressed', String(Boolean(value)));
+      button.classList.toggle('on', Boolean(value));
+    }
+
+    function readConfig() {
+      return {
+        strategy: $('#strategy').value,
+        top_k: Number($('#topK').value),
+        score_threshold: Number($('#threshold').value),
+        rrf_k: Number($('#rrfK').value),
+        use_pageindex: switchValue('usePageIndex'),
+        use_hyde: switchValue('useHyde'),
+        use_model_rerank: switchValue('useModelRerank'),
+        provider: $('#provider').value,
+        model: $('#model').value.trim(),
+        temperature: Number($('#temperature').value),
+        response_style: $('#responseStyle').value,
+        show_trace: switchValue('showTrace'),
+      };
+    }
+
+    function applyConfig(config) {
+      $('#strategy').value = config.strategy;
+      $('#topK').value = String(config.top_k);
+      $('#topKValue').textContent = String(config.top_k);
+      $('#threshold').value = String(config.score_threshold);
+      $('#thresholdValue').textContent = Number(config.score_threshold).toFixed(2);
+      $('#rrfK').value = String(config.rrf_k);
+      setSwitch('usePageIndex', config.use_pageindex);
+      setSwitch('useHyde', config.use_hyde);
+      setSwitch('useModelRerank', config.use_model_rerank);
+      setSwitch('showTrace', config.show_trace);
+      $('#provider').value = config.provider;
+      $('#model').value = config.model || '';
+      $('#temperature').value = String(config.temperature);
+      $('#temperatureValue').textContent = Number(config.temperature).toFixed(1);
+      $('#responseStyle').value = config.response_style;
+      const labels = {hybrid: 'Hybrid + RRF', dense: 'Dense', bm25: 'BM25', pageindex: 'PageIndex'};
+      $('#modeChip').lastChild.textContent = labels[config.strategy] || config.strategy;
+    }
+
+    async function loadConfig() {
+      try {
+        const response = await fetch('/api/config');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const saved = JSON.parse(localStorage.getItem(configStorageKey) || 'null');
+        applyConfig({...data.defaults, ...(saved || {})});
+      } catch (error) {
+        notify('Không tải được cấu hình backend; đang dùng giá trị trên giao diện');
       }
     }
 
@@ -414,22 +504,25 @@
       notify('Đã làm mới trạng thái từ báo cáo trong repository');
     });
 
-    const savedTopK = Number(localStorage.getItem('rag.topK'));
-    if (savedTopK >= 3 && savedTopK <= 10) $('#topK').value = String(savedTopK);
-    $('#topKValue').textContent = $('#topK').value;
     $('#topK').addEventListener('input', event => { $('#topKValue').textContent = event.target.value; });
+    $('#threshold').addEventListener('input', event => { $('#thresholdValue').textContent = Number(event.target.value).toFixed(2); });
+    $('#temperature').addEventListener('input', event => { $('#temperatureValue').textContent = Number(event.target.value).toFixed(1); });
+    $('#strategy').addEventListener('change', () => applyConfig(readConfig()));
+    $$('.switch').forEach(button => button.addEventListener('click', () => {
+      setSwitch(button.id, button.getAttribute('aria-pressed') !== 'true');
+    }));
     $('#saveSettings').addEventListener('click', () => {
-      localStorage.setItem('rag.topK', $('#topK').value);
-      notify(`Đã lưu top_k = ${$('#topK').value} cho trình duyệt này`);
+      const config = readConfig();
+      localStorage.setItem(configStorageKey, JSON.stringify(config));
+      applyConfig(config);
+      notify('Đã lưu cấu hình cho các lượt hỏi tiếp theo');
     });
-    ['strategy', 'threshold', 'rrfK', 'provider', 'model', 'temperature', 'responseStyle'].forEach(id => {
-      const control = $(`#${id}`);
-      control.disabled = true;
-      control.title = 'Giá trị này do backend quản lý';
-    });
-    $$('.switch').forEach(button => {
-      button.disabled = true;
-      button.title = 'Hành vi này do backend quản lý';
+    $$('.settings-menu button').forEach((button, index) => {
+      button.addEventListener('click', () => {
+        $$('.settings-menu button').forEach(item => item.classList.toggle('active', item === button));
+        const sections = $$('.settings-section');
+        sections[Math.min(index, sections.length - 1)].scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
     });
 
     $('#sourcesPanel').replaceChildren(element('p', '', 'Nguồn được backend trả về sẽ xuất hiện tại đây.'));
@@ -438,13 +531,13 @@
     $('.composer-note').textContent = 'Corpus thật · Hãy đối chiếu quyết định quan trọng với nguồn trích dẫn';
     const knowledgeStats = $$('.summary-grid .stat-card span', $('#knowledgeView'));
     knowledgeStats[0].textContent = 'Nguồn trong corpus';
-    knowledgeStats[1].textContent = 'Chunk chưa được backend công bố';
+    knowledgeStats[1].textContent = 'Chunk có thể tìm kiếm';
     $('.data-row.header span:nth-child(4)', $('#knowledgeView')).textContent = 'Số chunk';
     $('.panel > p', $('#evaluationView')).textContent = 'Chỉ số sẽ xuất hiện khi báo cáo đánh giá thật không còn mục TODO.';
-    $('.title-group small', $('#settingsView')).textContent = 'Chỉ top_k được frontend điều khiển';
-    $('.page-heading p', $('#settingsView')).textContent = 'Frontend chỉ gửi top_k theo contract hiện tại; các giá trị khác do backend và biến môi trường quản lý.';
+    loadConfig();
     loadCatalog();
     loadEvaluation();
+    loadGoldenQuestions();
   </script>
 </body>
 </html>

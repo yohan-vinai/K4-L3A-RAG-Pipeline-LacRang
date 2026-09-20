@@ -15,10 +15,11 @@ import os
 
 from dotenv import load_dotenv
 
-from .bonus_query_expansion import expand_query
+from .bonus_query_expansion import expand_query_configured
+from .pipeline_config import PipelineConfig
 from .task5_semantic_search import semantic_search
 from .task6_lexical_search import lexical_search
-from .task7_reranking import rerank_model, rerank_rrf
+from .task7_reranking import RRF_K, rerank_model, rerank_rrf
 from .task8_pageindex_vectorless import pageindex_search
 
 
@@ -46,41 +47,87 @@ def retrieve(
     use_reranking: bool = True,
 ) -> list[dict]:
     """Trả về hybrid hoặc pageindex SearchResult."""
-    candidate_k = top_k * CANDIDATE_MULTIPLIER
+    defaults = PipelineConfig.defaults()
+    return retrieve_configured(
+        query,
+        PipelineConfig(
+            strategy="hybrid" if use_reranking else "dense",
+            top_k=top_k,
+            score_threshold=score_threshold,
+            rrf_k=RRF_K,
+            use_pageindex=True,
+            use_hyde=USE_HYDE,
+            use_model_rerank=USE_MODEL_RERANK,
+            provider=defaults.provider,
+            model=defaults.model,
+            temperature=defaults.temperature,
+            response_style=defaults.response_style,
+            show_trace=defaults.show_trace,
+        ),
+    )
+
+
+def retrieve_configured(query: str, config: PipelineConfig) -> list[dict]:
+    """Run retrieval with an immutable request-scoped configuration."""
+    if config.strategy == "pageindex":
+        return pageindex_search(query, top_k=config.top_k)
+
+    candidate_k = config.top_k * CANDIDATE_MULTIPLIER
 
     # HyDE chỉ đổi vector truy vấn, mọi thứ phía sau vẫn chạy trên query gốc.
-    search_query = expand_query(query) if USE_HYDE else query
+    search_query = (
+        expand_query_configured(query, config.provider, config.model)
+        if config.use_hyde
+        else query
+    )
 
-    dense = semantic_search(search_query, top_k=candidate_k)
-    sparse = lexical_search(search_query, top_k=candidate_k)
+    dense = (
+        semantic_search(search_query, top_k=candidate_k)
+        if config.strategy in {"hybrid", "dense"}
+        else []
+    )
+    sparse = (
+        lexical_search(search_query, top_k=candidate_k)
+        if config.strategy in {"hybrid", "bm25"}
+        else []
+    )
 
     # RRF chỉ chạy đúng một lần trong toàn pipeline.
-    if use_reranking:
+    if config.strategy == "hybrid":
         # Khi có cross-encoder thì fuse rộng hơn rồi mới cắt: chấm lại đúng
         # top_k chỉ đảo được thứ tự, không kéo nổi chunk tốt đang nằm hạng k+1.
-        fused_k = candidate_k if USE_MODEL_RERANK else top_k
-        hybrid = rerank_rrf([dense, sparse], top_k=fused_k)
-        if USE_MODEL_RERANK:
+        fused_k = candidate_k if config.use_model_rerank else config.top_k
+        if config.rrf_k == RRF_K:
+            hybrid = rerank_rrf([dense, sparse], top_k=fused_k)
+        else:
+            hybrid = rerank_rrf([dense, sparse], top_k=fused_k, k=config.rrf_k)
+        if config.use_model_rerank:
             # Chấm trên câu hỏi GỐC: đoạn giả định của HyDE không phải thứ cần
             # khớp, câu hỏi thật mới là thứ cần khớp.
-            hybrid = rerank_model(query, hybrid, top_k=top_k)
+            hybrid = rerank_model(query, hybrid, top_k=config.top_k)
+    elif config.strategy == "bm25":
+        hybrid = sparse[: config.top_k]
     else:
-        hybrid = dense[:top_k]
+        hybrid = dense[: config.top_k]
 
     # Quyết định fallback dựa trên cosine similarity gốc của dense, không dùng
     # RRF score: RRF chỉ là thứ hạng (~0.016–0.033) nên không cùng thang đo.
     best_dense_score = dense[0]["score"] if dense else 0.0
 
-    if best_dense_score < score_threshold:
+    if (
+        config.use_pageindex
+        and config.strategy in {"hybrid", "dense"}
+        and best_dense_score < config.score_threshold
+    ):
         try:
-            fallback = pageindex_search(query, top_k=top_k)
+            fallback = pageindex_search(query, top_k=config.top_k)
         except Exception as error:  # PageIndex là dịch vụ ngoài, không được sập UI.
             print(f"[task9] PageIndex fallback lỗi, dùng hybrid: {error}")
         else:
             if fallback:
-                return fallback[:top_k]
+                return fallback[: config.top_k]
 
-    return hybrid[:top_k]
+    return hybrid[: config.top_k]
 
 
 if __name__ == "__main__":

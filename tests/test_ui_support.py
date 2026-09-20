@@ -1,6 +1,7 @@
 from src.ui_support import (
     load_corpus_catalog,
     load_evaluation_status,
+    load_golden_questions,
     retrieval_label,
     run_generation,
 )
@@ -13,6 +14,8 @@ def test_catalog_reflects_the_checked_in_corpus():
     assert sum(item["doc_type"] == "news" for item in catalog) == 5
     assert all(item["title"] and item["source"] and item["path"] for item in catalog)
     assert all(item["url"].startswith("https://") for item in catalog)
+    assert all(item["chunk_count"] > 0 for item in catalog)
+    assert sum(item["chunk_count"] for item in catalog) == 627
 
 
 def test_generation_success_and_refusal_states_follow_contract():
@@ -73,3 +76,10 @@ def test_evaluation_and_method_labels_are_truthful():
     assert status["report_ready"] is (status["todo_count"] == 0)
     assert retrieval_label("hybrid") == "Hybrid + RRF"
     assert retrieval_label("pageindex") == "PageIndex fallback"
+
+
+def test_golden_questions_are_loaded_from_the_checked_in_dataset():
+    questions = load_golden_questions()
+    assert len(questions) >= 20
+    assert questions[0]["id"] == "GQ-001"
+    assert all(item["question"].strip() for item in questions)
